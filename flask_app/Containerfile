@@ -1,6 +1,9 @@
-FROM quay.io/kubernetes-for-developers/flask
+FROM quay.io/blueshoe/python3.9-slim
 
 WORKDIR /app
+
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
 COPY . .
 
